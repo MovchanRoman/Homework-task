@@ -2,4 +2,16 @@ package homework.h04;
 
 // base
 // https://leetcode.com/problems/plus-one/
-public class T1 {}
+class Solution {
+    public int hammingDistance(int x, int y) {
+        int count = 0;
+        int xor = x ^ y;
+
+        while (xor != 0) {
+            count += xor & 1;
+            xor >>= 1;
+        }
+
+        return count;
+    }
+}
